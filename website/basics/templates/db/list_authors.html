@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authors</title>
+    <style>
+        body {font-family : calibri; font-size: 14pt; }
+        h2 {color:blue}
+
+    </style>
+</head>
+<body>
+<h2>Authors</h2>
+
+{% if authors %}
+<table cellpadding="5px" border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+    </tr>
+    {% for author in authors %}
+    <tr>
+        <td>{{author.0}}</td>
+        <td>{{author.1}}</td>
+        <td>{{author.2}}</td>
+        <td>{{author.3}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<h3>Sorry! Could not retrieve details of authors!</h3>
+{% endif %}
+
+</body>
+</html>

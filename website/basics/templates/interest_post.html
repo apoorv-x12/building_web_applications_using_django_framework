@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interest</title>
+</head>
+<body>
+
+<h2>Interest Calculation </h2>
+<form method="post">
+    {% csrf_token %}
+    Deposit Amount<br/>
+    <input type='number' name='amount'/>
+    <p></p>
+
+    Interest Rate<br/>
+    <input type='number' name='rate' step="any"/>
+    <p></p>
+    <input type='submit' value="Calculate"/>
+</form>
+
+{% if interest %}
+    <h3>Interest = {{interest}}  </h3>
+{% endif %}
+
+
+</body>
+</html>

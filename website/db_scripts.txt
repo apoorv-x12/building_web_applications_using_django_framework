@@ -1,0 +1,27 @@
+CREATE TABLE authors (
+    auid     INTEGER      PRIMARY KEY AUTOINCREMENT,
+    fullname VARCHAR (30),
+    email    VARCHAR (50) UNIQUE,
+    mobile   VARCHAR (10)
+);
+
+insert into authors(fullname, email,mobile)
+     values ('Scott Guthrie','guthrie@microsoft.com','3399434994')
+
+insert into authors(fullname, email,mobile)
+     values ('Malcolm Gladwell', 'gladwell@gmail.com','9494888333')
+
+insert into authors(fullname, email, mobile)
+     values ('Tomas Friedman','friedman@gmail.com','9898877666')
+
+
+insert into books(title, author, price)
+     values("Tuesdays with Morrie", "Mitch Album",650)
+
+
+CREATE TABLE books (
+    id      serial  PRIMARY KEY,
+    title   Text,
+    author  Text,
+    price   int
+);     

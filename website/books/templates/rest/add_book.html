@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+     URL = "/books/rest/books/";
+     function add_book() {
+         var data = {
+              "title": $("#title").val(),
+              "author": $("#author").val(),
+              "price": $("#price").val()
+              };
+
+          // Make AJAX POST request
+          $.ajax({ "url": URL,
+                 "data": data,
+                 "type" : "POST",
+                 "success" : add_success,
+                 "error" : add_error
+                  });
+     }
+
+     function add_success() {
+        alert("Added book successfully!")
+     }
+     function add_error() {
+         alert("Sorry! Could not update book!")
+     }
+    </script>
+</head>
+<body>
+<h1>Add Book</h1>
+Title <br/>
+<input type="text" id="title" size="30"/>
+<p></p>
+Author <br/>
+<input type="text" id="author" size="30"/>
+<p></p>
+Price <br/>
+<input type="number" id="price" size="10"/>
+<p></p>
+<button onclick="add_book()">Add</button>
+</body>
+</html>
+

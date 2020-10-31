@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interest</title>
+</head>
+<body>
+
+<h2>Interest Calculation </h2>
+<form method="post" novalidate>
+    {% csrf_token %}
+    Amount <br/>
+    {{form.amount}}
+    {# Display Errors related to Amount field #}
+    {% for error in form.amount.errors %}
+       {{error}}
+    {% endfor %}
+    <p></p>
+    Interest Rate <br/>
+    {{form.rate}}
+    {# Display Errors related to Rate field #}
+    {% for error in form.rate.errors %}
+       {{error}}
+    {% endfor %}
+    <p></p>
+    <input type='submit' value="Calculate"/>
+    <p></p>
+</form>
+
+{% if interest %}
+    <h3>Interest = {{interest}}  </h3>
+{% endif %}
+
+
+</body>
+</html>
